@@ -6,13 +6,13 @@ require_once('../model/usersService.php');
 
 
 $id = $_GET['id'];
-$userlist = deleteallevm($id);
+$userlist = deletealldonors($id);
 
 
 
 if($userlist){
 
-header('location:../view/evmlist1.php');
+header('location:../view/donorlist1.php');
 }else{
 echo "fail";
 

@@ -1,5 +1,6 @@
-<?php 
+<?php
 
-	header('location: view/login.html');
+	header('location: view/login1.php');
+
 
 ?>
