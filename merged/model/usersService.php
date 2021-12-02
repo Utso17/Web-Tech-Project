@@ -13,7 +13,52 @@ require_once('db1.php');
         }else{
             return false;
         }
+    } 
+
+
+
+    function getadminprofile(){
+        $conn = getConnection();
+        $sql = "select * from admin";
+        $result = mysqli_query($conn, $sql);
+    $user =[];
+    while($data = mysqli_fetch_assoc($result)){
+    array_push($user, $data);
     }
+    return $user;
+    }
+
+
+
+
+
+    function updateadmin(){
+    $conn = getConnection();
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+
+    $sql ="update admin set username='$username', password='$password', email='$email', phone='$phone'";
+
+    $result = mysqli_query($conn, $sql);
+    $status = mysqli_query($conn, $sql);
+    if($status){
+    return true;
+    }else{
+    return false;
+    }
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -74,8 +119,6 @@ require_once('db1.php');
     return false;
     }
     }
-
-
 
 
 

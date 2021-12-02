@@ -94,6 +94,6 @@
 
 <?php
   }else{
-    header('location: ../views/login.html');
+    header('location: ../view/login.html');
   }
 ?>

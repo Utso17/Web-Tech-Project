@@ -6,15 +6,15 @@
 
 
 	if(isset($_REQUEST['submit'])){
-	if(empty($_POST['name']) || empty($_POST['password'])|| empty($_POST['email']) ||empty($_POST['phone']))
+	if(empty($_POST['username']) || empty($_POST['password'])|| empty($_POST['email']) ||empty($_POST['phone']))
 	{
 	echo'<p class="form-forget">please Insert data in every field</p>';
 
 	}
 	else{
-	$userlist = updateallreceivers();
+	$userlist = updateadmin();
 
-	header('location:receiverlist1.php?msg=invalid');
+	header('location:adminp.php?msg=invalid');
 	}
 
 	}
@@ -23,26 +23,21 @@
 	<!DOCTYPE html>
 	<html>
 	<head>
-	<title>Edit Receiver</title>
+	<title>Edit Admin</title>
 	<link rel="stylesheet" href="../asset/s.css">
 	</head>
 	<body>
 	<form method="post" action="">
 	<center>
 	<fieldset>
-	<h3>Update Receiver</h3>
+	<h3>Update Admin</h3>
 
 	<table>
 	<tr>
-	<td>Id</td>
-	<td><input type="text" name="id" value="<?php echo $_GET['id']; ?>"></td>
-	</tr>
 	<tr>
 	<td>Username</td>
-	<td><input type="text" id="username" name="name" value="<?php echo $_GET['name']; ?>" onkeyup="f5()"></td>
+	<td><input type="text" id="username" name="username" value="<?php echo $_GET['username']; ?>" onkeyup="f5()"></td>
 	<td><p id="Username" class="form-forget"> </p></td>
-
-
 	</tr>
 	<tr>
 	<td>Password</td>
@@ -75,8 +70,7 @@
 
 	</table>
 	</fieldset>
-	<h3 align="left"><a href="receiverlist1.php"> <input type="button" value="Back" ></a> </h3>
-
+	<h3 align="left"><a href="adminp.php"> <input type="button" value="Back" ></a> </h3>
 
 	<h3 align="right"><a href="../controller/logout1.php"> <input type="button" value="Logout" ></a> </h3>
 

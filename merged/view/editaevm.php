@@ -24,7 +24,7 @@
 	<html>
 	<head>
 	<title>Edit Event Manager</title>
-	<link rel="stylesheet" href="../view/style.css">
+	<link rel="stylesheet" href="../asset/s.css">
 	</head>
 	<body>
 	<form method="post" action="">
@@ -39,8 +39,10 @@
 	</tr>
 	<tr>
 	<td>Username</td>
-	<td><input type="text" id="name" name="name" value="<?php echo $_GET['name']; ?>" onkeyup="f5()"></td>
-	<td><p id="name" class="form-forget"> </p></td>
+	<td><input type="text" id="username" name="name" value="<?php echo $_GET['name']; ?>" onkeyup="f5()"></td>
+	<td><p id="Username" class="form-forget"> </p></td>
+
+
 	</tr>
 	<tr>
 	<td>Password</td>
@@ -55,7 +57,7 @@
 	</tr>
 	<tr>
 	<td>Phone</td>
-	<td><input type="text" id="phone" name="phone" value="<?php echo $_GET['phone']; ?>" onkeyup="f7()"></td>
+	<td><input type="text" id="phone" name="phone" value="<?php echo $_GET['phone']; ?>" onkeyup="f8()"></td>
 	<td><p id="phonejs" class="form-forget"> </p></td>
 
 
@@ -73,11 +75,13 @@
 
 	</table>
 	</fieldset>
-	<h3 align="left"><a href="evmlist1.php"> <input type="button" value="Back" ></a> </h3>
+	<h3 align="left"><a href="../view/evmlist1.php"> <input type="button" value="Back" ></a> </h3>
+
 
 	<h3 align="right"><a href="../controller/logout1.php"> <input type="button" value="Logout" ></a> </h3>
 
 	</center>
 	</form>
+	<script type="text/javascript" src="../asset/valid.js"></script>
 	</body>
 	</html>

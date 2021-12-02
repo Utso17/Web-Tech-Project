@@ -9,6 +9,7 @@
 
 		if(empty($_POST['name']) || empty($_POST['password'])|| empty($_POST['email']) ||empty($_POST['phone']))
 		{
+			echo'<p class="form-forget">please Insert data in every field</p>';
 		}
 
 
@@ -43,22 +44,22 @@
 		<!DOCTYPE html>
 		<html>
 		<head>
-		<title>All Receiver list</title>
-		<link rel="stylesheet" href="../view/style.css">
+		<title>All Receiver List</title>
+		<link rel="stylesheet" href="../asset/s.css">
 		</head>
 		<body>
 		<form method="post" action="">
 
 
 
-		<h2>Insert verified Receiver</h2>
+		<h2>Insert Receiver</h2>
 		<table>
 
 
 		<tr>
 		<td>Username</td>
-		<td><input type="text" id="name" name="name" onkeyup="f5()"></td>
-		<td><p id="name" class="form-forget"> </p></td>
+		<td><input type="text" id="username" name="name" onkeyup="f5()"></td>
+		<td><p id="Username" class="form-forget"> </p></td>
 		</tr>
 		<tr>
 		<td>Password</td>
@@ -73,7 +74,7 @@
 		</tr>
 		<tr>
 		<td>phone</td>
-		<td><input type="text" id="phone" name="phone" onkeyup="f7()"></td>
+		<td><input type="text" id="phone" name="phone" onkeyup="f8()"></td>
 		<td><p id="phonejs" class="form-forget"> </p></td>
 	    </tr>
 
@@ -92,5 +93,8 @@
 		<h3 align="right"><a href="../controller/logout1.php"> <input type="button" value="Logout" ></a> </h3>
 
 
+		<script type="text/javascript" src="../asset/valid.js"></script>
+
 		</body>
+
 		</html>
