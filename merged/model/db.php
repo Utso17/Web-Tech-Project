@@ -1,25 +1,18 @@
-<?php
+<?php 
+	
+	$host 	= "localhost";
+	$dbname = 'project';
+	$dbuser = 'root';
+	$dbpassword = '';
 
+	function getConnection(){
+		global $host;
+		global $dbname;
+		global $dbuser;
+		global $dbpassword;
+		
+		$con = mysqli_connect($host, $dbuser, $dbpassword, $dbname);
+		return $con;
+	}
 
-
-$servername = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$database = 'project';
-
-
-
-function getConnection(){
-global $servername;
-global $dbuser;
-global $dbpass;
-global $database;
-
-
-
-
-
-$conn = mysqli_connect($servername, $dbuser, $dbpass, $database);
-return $conn;
-}
 ?>

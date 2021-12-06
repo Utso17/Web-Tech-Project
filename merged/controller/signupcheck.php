@@ -13,7 +13,7 @@
 					fwrite($myfile, $user);
 					fclose($myfile);
 
-					header('location: ../view/login.html');
+					header('location: ../view/mlogin.php');
 				}else{
 					echo "Invalid email...";
 				}	

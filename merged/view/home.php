@@ -6,15 +6,10 @@
 </head>
 <body >
 
-    
-    <h3 align="right">
-         
-         <a href="resources.html">Resources</a>&nbsp;&nbsp;&nbsp;&nbsp;
-         <a href="past&presentEvents.html">Past & Present Events</a>&nbsp;&nbsp;&nbsp;&nbsp;
-         <a href="charities.html">Charities</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="membersignupevm.php">Login/Registration</a>
-     </h3>
-         <img src="../asset/CF.jpg" width="150px" height="100px"/>
+    <?php require_once'../model/Links.php'?>
+
+
+         <p align="left"><img src="../asset/CF.jpg" width="150px" height="100px"/></p>
 
     <br>
     <h1 align="center">
@@ -75,13 +70,9 @@
 
      <hr>
 
-     <left>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Croudfunding</h2><br>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h4>address........address................<br>number...........number</h4>
+     
 
-     </left>
-
-     <center><h1>Thank you for visiting</h1></center>
+     <?php  require_once'../model/Credit.php' ?>
 
 
      
