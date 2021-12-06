@@ -1,83 +1,235 @@
+<?php
+session_start();
+if (isset($_POST['submit_logout'])) {
+    session_unset();
+}
+
+
+if (isset($_SESSION['login'])) {
+} else {
+    header("location: login.php");
+}
+
+
+
+if (isset($_POST['submit_club'])) {
+
+    $clubname = $_POST['clubname'];
+    $_SESSION['clubname'] = $clubname;
+    header("location: subscribtion.php");
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowdfunding Website</title>
+    <link rel="stylesheet" href="../node_modules/mdb-ui-kit/css/mdb.min.css">
+    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../node_modules/toastr/build/toastr.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .top-navigation ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .top-navigation ul li {
+            list-style-type: none;
+            margin: 10px;
+            padding: 10px;
+            background-color: lightskyblue;
+
+        }
+
+        .top-navigation li a {
+            text-decoration: none;
+        }
+
+        .top-navigation li a:hover {
+            color: tomato;
+        }
+
+        .choose-club {
+            width: 80%;
+            margin: auto;
+            padding-left: 40px;
+            padding-right: 40px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap
+        }
+
+        .individual-club {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            padding: 7px;
+        }
+
+        .individual-club form {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            padding: 7px;
+        }
+
+        .individual-club .submit-club {
+            text-align: center;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        .individual-club .submit-club:hover {
+            background-color: tomato;
+        }
+    </style>
 </head>
-<body >
 
-    <?php require_once'../model/Links.php'?>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand me-2" href="home.php">
+                    Crowdfunding Webstie
+                </a>
 
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
 
-         <p align="left"><img src="../asset/CF.jpg" width="150px" height="100px"/></p>
-
-    <br>
-    <h1 align="center">
-
-            Funding for a better future
-    </h1>
-    <br />
-    
-        <tr>
-            <tr height="50px">
-            <h1 align="center">Achievement</h1></td>
-        </tr>
-    <table width="100%" border="1">
-
-        <tr>
-            <td align="center">
-                <h2>2 project running</h2>
-            </td>
-            <td align="center">
-                <h2>$2,289 funded towards creative work</h2>
-            </td>
-            <td align="center">
-                <h3>Running Projects</h2>
-                <a  href="projectOcean.html"><p>Project Ocean</a><br>
-                <a  href="projectPollution.html"><p>Project Pollution</a><br>
-            </td>
-        </tr>
-    </table>
-
-    <br><br><br>
-
-
-    <table width="100%" border="1">
-    <tr>
-        <td><img src="../asset/ocean.jpg" width="500px" height="300px"/></td>
-        <td align="center">
-            <h2> Protect the Oceans</h2>
-             <h4> We've just launched our fall membership drive, and we want you to join us!When you become a   member, your donation helps fund Oceana’s proven, science-based campaigns to save species and restore our oceans. We've got so much work to protect our oceans from threats like offshore drilling — which is unfortunately wreaking havoc on our oceans and marine wildlife in California right now. But we can't do this work without. <a href="projectOcean.html">learn more...</a></h4> 
-
-     </td>
-     </table>
-
-     <br><br><br>
-
-     <table width="100%" border="1">
-    <tr>
-        <td><img src="../asset/pollution.jpg" width="300px" height="300px"/></td>
-        <td align="center">
-         <h2> Pollution Prevention (P2) Grant Program</h2>
-            <h4>Pollution Prevention (P2) Grants provide technical assistance to businesses in order to help them develop and adopt source reduction practices (also known as “pollution prevention” or “P2”). P2 means reducing or eliminating pollutants from entering any waste stream or otherwise released into the environment prior to recycling, treatment, or disposal. In keeping with the Pollution Prevention Act of 1990, EPA is encouraging P2 because implementing these approaches can result in reductions in toxic pollutants, the use of water, energy and other raw materials, while also lowering business costs. P2 grants are awarded to States, colleges and universities (recognized as instrumentalities of the state), and federally-recognized tribes and intertribal consortia. <a href="projectPollution.html">learn more...</a></h4> 
-
-     </td>
-     </table>
-
-
-     <br><br><br>
-
-
-     <hr>
-
-     
-
-     <?php  require_once'../model/Credit.php' ?>
-
-
-     
-    
-
-
+                <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="history.php">Donation History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.php">Choose a Club</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="invite.php">Invite Friends</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center">
+                        <a class="btn btn-primary px-3" href="logoutJS.php" role="button">Log out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="col-md-10 m-auto d-block mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="../Assets/images/wildfare.png" class="m-auto d-block" alt="" height="180px" width="200px">
+                        <form action="" method="POST">
+                            <input style="visibility:hidden;" type="text" name="clubname" value="Wildfare Club">
+                            <input class="text-center btn btn-primary" type="submit" name="submit_club" value="Wildfare Club">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="../Assets/images/kids.png" alt="" height="180px" width="200px">
+                        <form action="" method="POST">
+                            <input style="visibility:hidden;" type="text" name="clubname" value="Children Club">
+                            <input class="text-center btn btn-primary" type="submit" name="submit_club" value="Children Club">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="../Assets/images/homeless.png" alt="" height="180px" width="200px">
+                        <form action="" method="POST">
+                            <input style="visibility:hidden;" type="text" name="clubname" value="Homeless Club">
+                            <input class="text-center btn btn-primary" type="submit" name="submit_club" value="Homeless Club">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="../Assets/images/freedom.png" alt="" height="180px" width="200px">
+                        <form action="" method="POST">
+                            <input style="visibility:hidden;" type="text" name="clubname" value="Freedom Fighter Club">
+                            <input class="text-center btn btn-primary" type="submit" name="submit_club" value="Freedom Fighter Club">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="../Assets/images/students.png" alt="" height="180px" width="200px">
+                        <form action="" method="POST">
+                            <input style="visibility:hidden;" type="text" name="clubname" value="Student Club">
+                            <input class="text-center btn btn-primary" type="submit" name="submit_club" value="Student Club">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="../Assets/images/leader.png" alt="" height="180px" width="200px">
+                        <form action="" method="POST">
+                            <input style="visibility:hidden;" type="text" name="clubname" value="Leadership Club">
+                            <input class="text-center btn btn-primary" type="submit" name="submit_club" value="Leadership Club">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="../Assets/images/business.png" alt="" height="180px" width="200px">
+                        <form action="" method="POST">
+                            <input style="visibility:hidden;" type="text" name="clubname" value="Business Club">
+                            <input class="text-center btn btn-primary" type="submit" name="submit_club" value="Business Club">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <img src="../Assets/images/playground.png" alt="" height="180px" width="200px">
+                        <form action="" method="POST">
+                            <input style="visibility:hidden;" type="text" name="clubname" value="Playground Club">
+                            <input class="text-center btn btn-primary" type="submit" name="submit_club" value="Playground Club">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/mdb-ui-kit/js/mdb.min.js"></script>
+    <script src="../node_modules/toastr/build/toastr.min.js"></script>
 </body>
+
 </html>
