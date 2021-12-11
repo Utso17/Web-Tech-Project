@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2021 at 07:35 AM
+-- Generation Time: Dec 09, 2021 at 03:39 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
@@ -39,7 +39,36 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`username`, `email`, `phone`, `password`) VALUES
-('katibur', 'katiburrahmansany@gmail.com', 1788735788, '7887');
+('katibur', 'katiburrahmansany@gmail.com', 1788735788, '7357887');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `adminpp`
+--
+
+CREATE TABLE `adminpp` (
+  `id` int(50) NOT NULL,
+  `path` varchar(255) NOT NULL,
+  `created` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `adminpp`
+--
+
+INSERT INTO `adminpp` (`id`, `path`, `created`) VALUES
+(1, 'images/61add975e8f5e2021-12-06-10-35-49def.jpg', '0000-00-00 00:00:00'),
+(2, 'images/61add99da288c2021-12-06-10-36-29def.jpg', '0000-00-00 00:00:00'),
+(3, 'images/61add9ae609b92021-12-06-10-36-46admin.jpg', '0000-00-00 00:00:00'),
+(4, 'images/61add9fd08b942021-12-06-10-38-05admin.jpg', '0000-00-00 00:00:00'),
+(5, 'images/61adda2b0546e2021-12-06-10-38-51admin.jpg', '0000-00-00 00:00:00'),
+(6, 'images/61adda2dc3a732021-12-06-10-38-53admin.jpg', '0000-00-00 00:00:00'),
+(7, 'images/61adde49109b32021-12-06-10-56-25admin.jpg', '0000-00-00 00:00:00'),
+(8, 'images/61addedc735dd2021-12-06-10-58-52admin.jpg', '0000-00-00 00:00:00'),
+(9, 'images/61addf7c973022021-12-06-11-01-32admin.jpg', '0000-00-00 00:00:00'),
+(10, 'images/61ade018b61632021-12-06-11-04-08admin.jpg', '0000-00-00 00:00:00'),
+(11, 'images/61adf2ace19892021-12-06-12-23-24admin.jpg', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -85,7 +114,8 @@ CREATE TABLE `donors` (
 --
 
 INSERT INTO `donors` (`id`, `name`, `email`, `phone`, `password`) VALUES
-(3, 'acads', 'zxvczx@gmail.com', 1788735788, '555');
+(3, 'Katibursany', 'katibursany@gmail.com', 1696969, '555'),
+(12, 'shakibb', 'abcd@gmail.com', 2126526, '7357457');
 
 -- --------------------------------------------------------
 
@@ -94,20 +124,20 @@ INSERT INTO `donors` (`id`, `name`, `email`, `phone`, `password`) VALUES
 --
 
 CREATE TABLE `eventmanager` (
-  `id` int(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `phone` int(50) NOT NULL
+  `id` int(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` text NOT NULL,
+  `phone` int(11) NOT NULL,
+  `password` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `eventmanager`
 --
 
-INSERT INTO `eventmanager` (`id`, `username`, `password`, `email`, `phone`) VALUES
-(1, 'Tanvir', '1234', 'tanvirrezautso@gmail.com', 12312434),
-(2, 'Utso', '12345', 'tanvirreza@gmail.com', 1231411421);
+INSERT INTO `eventmanager` (`id`, `name`, `email`, `phone`, `password`) VALUES
+(1, 'shefu', 'shefu@gmail.com', 17874, '798'),
+(3, 'asifff', 'asif@gmail.com', 1788735788, '789');
 
 -- --------------------------------------------------------
 
@@ -132,20 +162,6 @@ INSERT INTO `member` (`id`, `username`, `password`, `email`, `phone`) VALUES
 (4, 'utso', '1234', 'tanvirreza56@gmail.com', 1616889999),
 (5, 'Utso', '12345', 'tanvirreza56@gmail.com', 3213123);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `receiver`
---
-
-CREATE TABLE `receiver` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `email` text NOT NULL,
-  `phone` int(11) NOT NULL,
-  `password` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 --
 -- Indexes for dumped tables
 --
@@ -155,6 +171,12 @@ CREATE TABLE `receiver` (
 --
 ALTER TABLE `admin`
   ADD UNIQUE KEY `id` (`username`);
+
+--
+-- Indexes for table `adminpp`
+--
+ALTER TABLE `adminpp`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `charity_list`
@@ -181,14 +203,14 @@ ALTER TABLE `member`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `receiver`
---
-ALTER TABLE `receiver`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `adminpp`
+--
+ALTER TABLE `adminpp`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `charity_list`
@@ -200,13 +222,13 @@ ALTER TABLE `charity_list`
 -- AUTO_INCREMENT for table `donors`
 --
 ALTER TABLE `donors`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `eventmanager`
 --
 ALTER TABLE `eventmanager`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `member`
@@ -214,27 +236,6 @@ ALTER TABLE `eventmanager`
 ALTER TABLE `member`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
--- AUTO_INCREMENT for table `donors`
---
-ALTER TABLE `donors`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `subscription`
---
-ALTER TABLE `subscription`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

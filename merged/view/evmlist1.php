@@ -26,12 +26,28 @@
        <input type="button" value="Search" >
 </form>
 	<br>
-	<div id="txtHint"><h3>User info will be listed here...</h3> </div>
+	<div id="txtHint"><h3>Searched EventManager's information will be shown here.</h3> </div>
 	<fieldset>
 	<center>
 	<h3>Event Manager List:</h3>
-	<p align="right"><a href="createevm.php"> <input type="button" value="create event manager" ></a> </p>
+	<p align="right"><a href="createevm.php"> <input type="button" value="Create New Event Manager" ></a> </p>
 </p>
+
+
+
+
+
+
+<p align="right"><a href="../controller/jsonallevms.php"> <input type="button" value="Click Here To Create Dynamic Json File"  ></a> <br>
+<?php
+   if(isset($_REQUEST["wrong_information"])){
+   	   echo'<p class="form-forget">New dynamic json file has been already created in Asset folder</p>..<a href="../asset/evm.json"target="_blank"> <input type="button" value="All evm list in json"  ></a>';
+    }
+ ?>
+
+
+
+
 
 	<table border="1">
 	<tr>

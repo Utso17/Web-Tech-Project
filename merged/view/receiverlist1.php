@@ -26,12 +26,32 @@
        <input type="button" value="Search" >
 </form>
 	<br>
-	<div id="txtHint"><h3>User info will be listed here...</h3> </div>
+	<div id="txtHint"><h3>Searched Receiver's information will be shown here.</h3> </div>
 	<fieldset>
 	<center>
 	<h3>Receiver List:</h3>
-	<p align="right"><a href="createreceiver.php"> <input type="button" value="create receiver" ></a> </p>
+	<p align="right"><a href="createreceiver.php"> <input type="button" value="create New Receiver" ></a> </p>
 </p>
+
+
+
+
+
+
+<p align="right"><a href="../controller/jsonallreceivers.php"> <input type="button" value="Click Here To Create Dynamic Json File"  ></a> <br>
+<?php
+   if(isset($_REQUEST["wrong_information"])){
+   	   echo'<p class="form-forget">New dynamic json file has been already created in Asset folder</p>..<a href="../asset/receiver.json"target="_blank"> <input type="button" value="All receivers list in json"  ></a>';
+    }
+ ?>
+
+
+
+
+
+
+
+
 
 	<table border="1">
 	<tr>
