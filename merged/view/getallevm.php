@@ -8,14 +8,14 @@ if($mysqli->connect_error) {
 
 
 
-$sql = "SELECT id,name, email, phone,password
+$sql = "SELECT id,username, email, phone,password
 FROM eventmanager WHERE id = ?";
 
 $stmt = $mysqli->prepare($sql);
 $stmt->bind_param("s", $_GET['q']);
 $stmt->execute();
 $stmt->store_result();
-$stmt->bind_result($id, $name, $email, $phone, $password);
+$stmt->bind_result($id, $username, $email, $phone, $password);
 $stmt->fetch();
 $stmt->close();
 
@@ -27,7 +27,7 @@ echo "<tr>";
 echo "<th>UserID:::</th>";
 echo "<td>" . $id . "</td> ";
 echo "<th>UserName:::</th>";
-echo "<td>" . $name . "</td>";
+echo "<td>" . $username . "</td>";
 echo "<th>Email:::</th>";
 echo "<td>" . $email . "</td>";
 echo "<th>Phone:::</th>";

@@ -7,7 +7,7 @@
 		if(isset($_REQUEST['submit'])){
 
 
-		if(empty($_POST['name']) || empty($_POST['password'])|| empty($_POST['email']) ||empty($_POST['phone']))
+		if(empty($_POST['username']) || empty($_POST['password'])|| empty($_POST['email']) ||empty($_POST['phone']))
 		{
 			echo'<p class="form-forget">please Insert data in every field</p>';
 		}
@@ -16,7 +16,7 @@
 		else
 		{
 		$id = $_REQUEST['id'];
-		$username = $_REQUEST['name'];
+		$username = $_REQUEST['username'];
 		$password = $_REQUEST['password'];
 		$email = $_REQUEST['email'];
 		$phone = $_REQUEST['phone'];
@@ -28,7 +28,7 @@
 
 		$user = [
 		'id'=> $id,
-		'name'=> $username,
+		'username'=> $username,
 		'password'=> $password,
 		'email'=> $email,
 		'phone'=> $phone,
@@ -58,7 +58,7 @@
 
 		<tr>
 		<td>Username</td>
-		<td><input type="text" id="username" name="name" onkeyup="f5()"></td>
+		<td><input type="text" id="username" name="username" onkeyup="f5()"></td>
 		<td><p id="Username" class="form-forget"> </p></td>
 		</tr>
 		<tr>

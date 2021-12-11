@@ -10,7 +10,7 @@ function getData()
            {  
             $userData[] = array(
                 'id'=> $row["id"],
-                'name'=> $row["name"],
+                'username'=> $row["username"],
                 'email'=> $row["email"],
                 'phone'=> $row["phone"],
                 'password'=> $row["password"]

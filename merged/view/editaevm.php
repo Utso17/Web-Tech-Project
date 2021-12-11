@@ -6,7 +6,7 @@
 
 
 	if(isset($_REQUEST['submit'])){
-	if(empty($_POST['name']) || empty($_POST['password'])|| empty($_POST['email']) ||empty($_POST['phone']))
+	if(empty($_POST['username']) || empty($_POST['password'])|| empty($_POST['email']) ||empty($_POST['phone']))
 	{
 	echo'<p class="form-forget">please Insert data in every field</p>';
 
@@ -39,7 +39,7 @@
 	</tr>
 	<tr>
 	<td>Username</td>
-	<td><input type="text" id="username" name="name" value="<?php echo $_GET['name']; ?>" onkeyup="f5()"></td>
+	<td><input type="text" id="username" name="username" value="<?php echo $_GET['username']; ?>" onkeyup="f5()"></td>
 	<td><p id="Username" class="form-forget"> </p></td>
 
 

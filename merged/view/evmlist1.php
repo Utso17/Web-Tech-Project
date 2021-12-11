@@ -11,7 +11,7 @@
 	<html lang="en">
 	<head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta username="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../asset/s.css">
 	<title>View Event Manager</title>
 
@@ -65,12 +65,12 @@
 	?>
 	<tr>
 	<td><?= $userlist[$i]['id'] ?></td>
-	<td><?= $userlist[$i]['name'] ?></td>
+	<td><?= $userlist[$i]['username'] ?></td>
 	<td><?= $userlist[$i]['password'] ?></td>
 	<td><?= $userlist[$i]['email'] ?></td>
 	<td><?= $userlist[$i]['phone'] ?></td>
 	<td>
-	<a href="editaevm.php?id=<?= $userlist[$i]['id'] ?>&name=<?= $userlist[$i]['name'] ?>&password=<?= $userlist[$i]['password'] ?>&email=<?= $userlist[$i]['email'] ?>&phone=<?= $userlist[$i]['phone'] ?>"> EDIT</a> |
+	<a href="editaevm.php?id=<?= $userlist[$i]['id'] ?>&username=<?= $userlist[$i]['username'] ?>&password=<?= $userlist[$i]['password'] ?>&email=<?= $userlist[$i]['email'] ?>&phone=<?= $userlist[$i]['phone'] ?>"> EDIT</a> |
 	<a href="deleteevm.php?id=<?= $userlist[$i]['id'] ?>"> DELETE</a>
 	</td>
 	</tr>
