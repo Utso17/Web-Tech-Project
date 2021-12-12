@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2021 at 03:39 PM
+-- Generation Time: Dec 12, 2021 at 06:26 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.23
+-- PHP Version: 7.3.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -115,7 +115,8 @@ CREATE TABLE `donors` (
 
 INSERT INTO `donors` (`id`, `name`, `email`, `phone`, `password`) VALUES
 (3, 'Katibursany', 'katibursany@gmail.com', 1696969, '555'),
-(12, 'shakibb', 'abcd@gmail.com', 2126526, '7357457');
+(12, 'shakibb', 'abcd@gmail.com', 2126526, '7357457'),
+(15, 'webtechJ', 'essefsina@gmail.com', 1781046737, '1234');
 
 -- --------------------------------------------------------
 
@@ -162,6 +163,35 @@ INSERT INTO `member` (`id`, `username`, `password`, `email`, `phone`) VALUES
 (4, 'utso', '1234', 'tanvirreza56@gmail.com', 1616889999),
 (5, 'Utso', '12345', 'tanvirreza56@gmail.com', 3213123);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscription`
+--
+
+CREATE TABLE `subscription` (
+  `id` int(11) NOT NULL,
+  `donor_id` int(11) NOT NULL,
+  `club_name` varchar(100) NOT NULL,
+  `donation_type` varchar(10) NOT NULL,
+  `paid_type` varchar(20) DEFAULT NULL,
+  `mobile_no` varchar(50) DEFAULT NULL,
+  `trnix` varchar(10) DEFAULT NULL,
+  `credit_card_no` varchar(100) DEFAULT NULL,
+  `expiry_month` varchar(20) DEFAULT NULL,
+  `expiry_year` varchar(25) DEFAULT NULL,
+  `cvv` varchar(25) DEFAULT NULL,
+  `free_type` varchar(20) DEFAULT NULL,
+  `money` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `subscription`
+--
+
+INSERT INTO `subscription` (`id`, `donor_id`, `club_name`, `donation_type`, `paid_type`, `mobile_no`, `trnix`, `credit_card_no`, `expiry_month`, `expiry_year`, `cvv`, `free_type`, `money`) VALUES
+(1, 15, 'Children Club', 'Free', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'One Time', 500);
+
 --
 -- Indexes for dumped tables
 --
@@ -203,6 +233,12 @@ ALTER TABLE `member`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `subscription`
+--
+ALTER TABLE `subscription`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -222,7 +258,7 @@ ALTER TABLE `charity_list`
 -- AUTO_INCREMENT for table `donors`
 --
 ALTER TABLE `donors`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `eventmanager`
@@ -235,6 +271,12 @@ ALTER TABLE `eventmanager`
 --
 ALTER TABLE `member`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `subscription`
+--
+ALTER TABLE `subscription`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
