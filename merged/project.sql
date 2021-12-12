@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2021 at 06:26 PM
+-- Generation Time: Dec 12, 2021 at 07:05 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.30
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -126,7 +126,7 @@ INSERT INTO `donors` (`id`, `name`, `email`, `phone`, `password`) VALUES
 
 CREATE TABLE `eventmanager` (
   `id` int(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
   `email` text NOT NULL,
   `phone` int(11) NOT NULL,
   `password` text NOT NULL
@@ -136,7 +136,7 @@ CREATE TABLE `eventmanager` (
 -- Dumping data for table `eventmanager`
 --
 
-INSERT INTO `eventmanager` (`id`, `name`, `email`, `phone`, `password`) VALUES
+INSERT INTO `eventmanager` (`id`, `username`, `email`, `phone`, `password`) VALUES
 (1, 'shefu', 'shefu@gmail.com', 17874, '798'),
 (3, 'asifff', 'asif@gmail.com', 1788735788, '789');
 
@@ -162,6 +162,27 @@ INSERT INTO `member` (`id`, `username`, `password`, `email`, `phone`) VALUES
 (1, 'Tanvir', '1', 'tanvirreza56@gmail.com', 1616889999),
 (4, 'utso', '1234', 'tanvirreza56@gmail.com', 1616889999),
 (5, 'Utso', '12345', 'tanvirreza56@gmail.com', 3213123);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `receiver`
+--
+
+CREATE TABLE `receiver` (
+  `id` int(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` text NOT NULL,
+  `phone` int(11) NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `receiver`
+--
+
+INSERT INTO `receiver` (`id`, `name`, `email`, `phone`, `password`) VALUES
+(1, 'sany', 'katiburrahmansany@gmail.com', 1788735788, '123');
 
 -- --------------------------------------------------------
 
@@ -233,6 +254,12 @@ ALTER TABLE `member`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `receiver`
+--
+ALTER TABLE `receiver`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `subscription`
 --
 ALTER TABLE `subscription`
@@ -271,6 +298,12 @@ ALTER TABLE `eventmanager`
 --
 ALTER TABLE `member`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `receiver`
+--
+ALTER TABLE `receiver`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `subscription`
