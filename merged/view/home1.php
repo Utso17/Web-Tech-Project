@@ -17,8 +17,8 @@
    <h3>
    	<a href="../view/adminp.php">Admin Profile</a> <br><br><br><br><br><br><br><br><br>
 	<a href="../view/donorlist1.php"> Donor List</a> <br><br>
-	<a href="../view/receiverlist1.php"> Receiver List</a> <br><br>
-	<a href="../view/evmlist1.php"> Event Manager List</a><br><br><br>
+	<a href="../view/evmlist1.php"> Event Manager List</a><br><br>
+	<a href="../view/receiverlist1.php"> Receiver List</a><br><br><br>
 </h3>
 </body>
 </html>
