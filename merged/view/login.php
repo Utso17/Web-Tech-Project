@@ -14,7 +14,7 @@
     
             <a href="login1.php">Admin Login</a> &nbsp;&nbsp;&nbsp;&nbsp;
 
-            <a href="login-signup2.php">Donor Login</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="login2.php">Donor Login</a> &nbsp;&nbsp;&nbsp;&nbsp;
 
             <a href="emlogin.php">Event Manager Login</a> &nbsp;&nbsp;&nbsp;&nbsp;
 
