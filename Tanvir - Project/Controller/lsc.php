@@ -6,7 +6,7 @@
 	$sql = "select * from charity_list where id like '%{$id}%'";
 	$result = mysqli_query($conn, $sql);
 
-	$response = "<table border=2>
+	$response = "<table border=5>
 					<tr>
 						<td>ID</td>
 						<td>Charity_name</td>

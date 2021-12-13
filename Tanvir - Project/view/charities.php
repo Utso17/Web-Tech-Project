@@ -16,7 +16,7 @@
   function ajax()
   {
 
-	var name = document.getElementById('name').value;
+	var id = document.getElementById('id').value;
 
 
 	var xhttp = new XMLHttpRequest();
@@ -26,7 +26,7 @@
 
 	xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-	xhttp.send('name='+name);
+	xhttp.send('id='+id);
 
 	xhttp.onreadystatechange = function()
 	{
@@ -68,10 +68,9 @@
 	<br><br><br>
 
 	<h1 align="center">Search by ID</h1>
-	<h3 align="center"><input  type="text" name="name" id="name" onkeyup="ajax()">
-	<input  type="button" name="" value="click" onclick="ajax()"></h3>
+	<h3 align="center"><input  type="text" name="id" id="id" onkeyup="ajax()"></h3>
 
-	<div id="result"> </div>
+	<div align="center" id="result"> </div>
 
 	<?php  require_once'../model/Credit.php' ?>
 </body>
