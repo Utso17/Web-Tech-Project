@@ -1,0 +1,24 @@
+body{
+	align-items: center;
+	background-image: url("../asset/bg.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display:inline;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.t1{	
+	border-collapse: collapse;
+	margin: 25px;
+	font-size: 20px;
+	min-width: 400px;
+
+}
+
+.t1 thead tr{
+	background-color: #009879;
+	color: #ffffff;
+	text-align: center;
+}
